@@ -1,5 +1,4 @@
-require 'test/unit'
-require 'test/unit/autorunner'
+require 'minitest/autorun'
 
 module Test
   module Unit

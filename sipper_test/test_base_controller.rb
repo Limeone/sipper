@@ -2,6 +2,7 @@ require 'sip_test_case'
 require 'base_controller'
 require 'test_controllers/test_controller'
 require 'flexmock'
+require 'flexmock/test_unit'
 
 class TestBaseController < SipTestCase
   include FlexMock::TestCase

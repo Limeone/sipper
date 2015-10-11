@@ -451,7 +451,7 @@ SipperConfigurator[:CallRate] = 5
 SipperConfigurator[:RunLoad] = false
 SipperConfigurator[:ActiveCalls] = 0
 ENV['SIPPER_HOME'] = 'backward_compat' unless ENV['SIPPER_HOME']
-unless RUBY_PLATFORM =~ /mswin/
+unless RUBY_PLATFORM =~ /mingw/
   SipperConfigurator[:LogPath] = "/tmp"
 end
 if Gem::Specification.methods.include?("SipperPE")

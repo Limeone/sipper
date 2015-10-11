@@ -1,7 +1,7 @@
 require 'session_recorder'
 require 'sipper_configurator'
 require 'util/sipper_util'
-require 'test/unit'
+require 'minitest/autorun'
 
 module SipperAssertions
   

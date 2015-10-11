@@ -1,6 +1,4 @@
 require 'rubygems'
-gem 'facets', '= 1.8.54'
-#require 'facets/more/pqueue'
 require 'ruby_ext/pqueue'
 require 'monitor'
 

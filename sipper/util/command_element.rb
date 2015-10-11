@@ -7,8 +7,6 @@ require 'util/sipper_util'
 require 'ruby_ext/string'
 require 'ruby_ext/object'
 
-require 'facets/core/string/first_char'
-
 module SipperUtil
 
   # One command element is like "@sleep 500" where the requirement is to add a sleep element for 500ms

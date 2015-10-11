@@ -1,4 +1,4 @@
-require 'facets/core/hash/inverse'
+require 'facets/hash/inverse'
 require 'util/sipper_util'
 
 module SipperUtil

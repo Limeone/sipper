@@ -20,8 +20,6 @@ require 'transaction/non_invite_server_transaction'
 require 'test_completion_signaling_helper'
 require 'ostruct'
 require 'rubygems'
-gem 'facets', '= 1.8.54'
-require 'facets/more/synchash'
 require 'ruby_ext/snapshot'
 require 'session_state/dialog_routes'
 require 'b2bua_session_mixin'
@@ -106,7 +104,7 @@ class Session
     @session_timer = SipperConfigurator[:SessionTimer]
     @session_limit = SipperConfigurator[:SessionLimit]
     @session_life_so_far = 0
-    @transactions = SyncHash.new  # the total transcations of this session
+    @transactions = Hash.new  # the total transcations of this session
     @transaction_handlers = {}  # the name of transaction handler classes, keyed with types.
     @use_2xx_retrans =  SipperConfigurator[:T2xxUsage]  # boolean
     @use_1xx_retrans =  SipperConfigurator[:T1xxUsage]  # boolean

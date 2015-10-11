@@ -2,7 +2,7 @@ unless $ULOGNAME
   x = File.basename($0)[0...-3]
   $ULOGNAME = '_'+x unless x =~/rake_test_loader/
 end
-require 'base_test_case'
+require_relative 'base_test_case'
 require 'bin/common'
 
 class SipTestCase < BaseTestCase

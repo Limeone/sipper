@@ -1,6 +1,6 @@
 require 'util/sipper_util'
 require 'ruby_ext/object'
-require 'facets/core/hash/reverse_merge'
+require 'facets/hash/reverse_merge'
 require 'sip_logger'
 require 'ruby_ext/mutable_class'
 require 'sip_headers/sipuri'

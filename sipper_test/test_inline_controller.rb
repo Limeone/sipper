@@ -1,4 +1,4 @@
-require 'driven_sip_test_case'
+require_relative 'driven_sip_test_case'
 
 class TestInlineController < DrivenSipTestCase
 

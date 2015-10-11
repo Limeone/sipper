@@ -1,7 +1,7 @@
 require 'sip_headers/header'
 require 'sip_logger'
 require 'strscan'
-require 'facets/core/string/underscore'
+require 'facets/string/underscore'
 
 module SipperUtil
   include SipLogger

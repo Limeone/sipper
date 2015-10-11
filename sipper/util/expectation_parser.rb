@@ -16,8 +16,6 @@ require 'util/sipper_util'
 require 'ruby_ext/string'
 require 'ruby_ext/object'
 
-require 'facets/core/string/first_char'
-
 module SipperUtil
 
   # one expectation element is like "< INVITE {1,2}" or "> 1xx {0,}"
@@ -54,7 +52,7 @@ module SipperUtil
         @range = Range.new(1,1)
       else
         rep = s.scan_until(/$/)
-        log_and_raise "Bad repetition in exp str", ArgumentError unless(rep.first_char(1)=="{" && rep.last_char(1)=="}")  
+        log_and_raise "Bad repetition in exp str", ArgumentError unless(rep[0]=="{" && rep[-1]=="}")
         rep_str = rep[1...-1]
         min, max = rep_str.split(",")
         min = 0 unless (min && min.size>0)
@@ -96,7 +94,7 @@ module SipperUtil
       if matched
         if dir == ::SipperUtil::ExpectationElement::Directions[2]  # "!" 
           matched = _match_neutral(message)
-        elsif message.first_char(1).int?
+        elsif message[0].int?
           matched = _match_response(message)
         else
           matched = _match_request(message)
@@ -126,7 +124,7 @@ module SipperUtil
       matched = true
       m = nil
       @exps[@idx].messages.each do |m|
-        return false unless m.first_char(1).int? 
+        return false unless m[0].int?
         matched = true
         0.upto(2) do |n|
           unless m[n,1]=="x"

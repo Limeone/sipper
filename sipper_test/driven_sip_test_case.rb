@@ -1,4 +1,4 @@
-require 'sip_test_case'
+require_relative 'sip_test_case'
 require 'test_completion_signaling_helper'
 require 'sipper_configurator'
 require 'util/expectation_parser'

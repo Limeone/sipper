@@ -1,5 +1,4 @@
 require 'generators/gen_controller'
-require 'facets/core/string/first_char'
 require 'util/sipper_util'
 
 module SIP
@@ -14,7 +13,7 @@ module SIP
         mod_flow_str = SipperUtil.make_expectation_parsable(flow_str)
         @flow = mod_flow_str.split("%").map {|str| str.strip}
         @direction = "neutral"
-        case @flow[0].first_char(1)
+        case @flow[0][0]
         when SipperUtil::ExpectationElement::Directions[0]
           @direction = "in"
         when SipperUtil::ExpectationElement::Directions[1]
@@ -22,7 +21,7 @@ module SIP
         else
           @direction = "neutral"
         end
-        @flow_msg_only = @flow.reject {|x| x.first_char(1) == "@"}
+        @flow_msg_only = @flow.reject {|x| x[0] == '@'}
       end  
       
       def generate_test(write_to_file=false, dir = nil)
